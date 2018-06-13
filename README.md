@@ -1,2 +1,2 @@
-# azure
-All Azure related RnD
+# Azure
+All Azure Related RnD
