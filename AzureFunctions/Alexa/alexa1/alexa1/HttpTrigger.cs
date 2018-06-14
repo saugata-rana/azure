@@ -39,26 +39,26 @@ namespace AlexaCalculatorSkill
                 case "LaunchRequest":
                 default:
                     log.Info($"Default LaunchRequest made");
-                    return CreateResponse(req, "Welcome to the Alexa Calculator", "Try asking: what is 3 plus 4?");
+                    return CreateResponse(req, "Welcome to the Saugata's Calculator", "Try asking: what is 3 plus 4?");
             }
         }
 
         private static HttpResponseMessage CreateResponse(HttpRequestMessage req, string title, string text)
         {
-                string responseContent = "{version: 1.0,\n"+
-                "\tsessionAttributes: {},\n"+
-                "\t\tresponse: {\n"+
-                "\t\t\toutputSpeech: {\n"+
-                "\t\t\t\ttype: PlainText,\n"+
-                "\t\t\t\ttext:"+ text + ",\n"+
+                string responseContent = "{\n\"version\": \"1.0\",\n"+
+                "\t\"sessionAttributes\": {},\n"+
+                "\t\t\"response\": {\n"+
+                "\t\t\t\"outputSpeech\": {\n"+
+                "\t\t\t\t\"type\": \"PlainText\",\n"+
+                "\t\t\t\t\"text\":"+ "\"" + text + "\"" + "\n"+
                 "\t\t\t},\n"+
-                "\t\t\tcard: {\n"+
-                "\t\t\t\ttype: Simple,\n"+
-                "\t\t\t\ttitle:"+ title +",\n"+
-                "\t\t\t\tcontent:"+ text  +",\n"+
+                "\t\t\t\"card\": {\n"+
+                "\t\t\t\t\"type\": \"Simple\",\n"+
+                "\t\t\t\t\"title\":"+ "\"" + title + "\""+",\n"+
+                "\t\t\t\t\"content\":"+ "\"" + text  + "\"" +"\n"+
                 "\t\t\t}\n"+
                 "\t\t},\n"+
-                "\t\tshouldEndSession: true\n"+
+                "\t\t\"shouldEndSession\": \"true\"\n"+
                 "\t}\n";
             
             //JObject responseContent1 =
